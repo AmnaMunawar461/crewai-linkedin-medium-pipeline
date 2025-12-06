@@ -12,6 +12,7 @@ It generates:
 📦 A structured workflow using Agents, Tasks, Tools, and Pydantic models
 
 📌 **Features**
+
 **✅ 1. Multi-Agent Content Workflow**
 
 LinkedIn Post Agent → Writes engaging LinkedIn posts using research and structure
@@ -53,7 +54,8 @@ class BlogPost(BaseModel):
 └── requirements.txt        # Dependencies
 
 ⚙️ How It Works
-1️⃣ Define Agents
+
+**1️⃣ Define Agents**
 
 A single agent performs multiple writing tasks with different instructions.
 
