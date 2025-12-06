@@ -7,7 +7,7 @@ from crewai import Agent, Task, Crew, LLM
 from pydantic import BaseModel
 
 import os
-os.environ['SERPER_API_KEY'] = '0943b574c79b13b313ab7cd49a372c5da5ab191e'
+os.environ['SERPER_API_KEY'] = 'your-api-key'
 
 web_search_tool = SerperDevTool()
 
@@ -21,22 +21,9 @@ class BlogPost(BaseModel):
 # Initialize the Gemini 2.5 Flash model
 llm = LLM(
     model="gemini/gemini-2.5-flash",
-    api_key="AIzaSyDtUGWVJE19r3mNAwkBn7F6y3NaDxLy3Xc" # Or set the environment variable
+    api_key="your-api-key" # Or set the environment variable
 )
 
-
-writing_agent = Agent(
-    role="LinkedIn Post Generator",
-    goal="Provide exceptional linkedin post writing services by following a multi-step process to write a post based on a topic accurately.",
-    backstory="""You are an AI assistant for writing LinkedIn (to show the answer) and medium post (to show the code how it was done with crew AI, what components used and etc).
-    You are an expert at following instructions. You will be given a topic, you have to write it in a format that is linkedIn and medium compatible and
-    in a professional manner. For each task, you will be provided with the specific tool needed to accomplish it.
-    Your job is to execute each task diligently and pass the results to the next step.""",
-    tools=[], # The agent is not given any tools directly
-    verbose=True,
-    allow_delegation=False,
-    llm=llm
-)
 
 writing_agent = Agent(
     role="LinkedIn Post Generator",
