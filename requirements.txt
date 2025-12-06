@@ -1,0 +1,6 @@
+crewai
+crewai-tools
+serper
+pydantic
+google-generativeai
+python-dotenv
